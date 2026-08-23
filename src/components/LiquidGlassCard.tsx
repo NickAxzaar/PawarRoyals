@@ -1,4 +1,5 @@
-﻿import "./LiquidGlassCard.css";
+﻿import { useEffect, useRef } from "react";
+import "./LiquidGlassCard.css";
 
 type Project = {
   number: string;
@@ -25,9 +26,56 @@ const projects: Project[] = [
 ];
 
 export default function LiquidGlassCard() {
+  const glassRef = useRef<HTMLDivElement>(null);
+  const displacementRef = useRef<SVGFEImageElement>(null);
+
+  useEffect(() => {
+    const glass = glassRef.current;
+    const map = displacementRef.current;
+
+    if (!glass || !map) return;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 512;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const image = ctx.createImageData(512, 512);
+    const data = image.data;
+
+    for (let y = 0; y < 512; y++) {
+      for (let x = 0; x < 512; x++) {
+        const nx = (x / 511) * 2 - 1;
+        const ny = (y / 511) * 2 - 1;
+
+        const edge = Math.max(Math.abs(nx), Math.abs(ny));
+
+        const strength = Math.pow(
+          Math.min(1, Math.max(0, (edge - 0.62) / 0.38)),
+          2,
+        );
+
+        const dx = -nx * strength;
+        const dy = -ny * strength;
+
+        const i = (y * 512 + x) * 4;
+
+        data[i] = 128 + dx * 70;
+        data[i + 1] = 128 + dy * 70;
+        data[i + 2] = 128;
+        data[i + 3] = 255;
+      }
+    }
+
+    ctx.putImageData(image, 0, 0);
+
+    map.setAttribute("href", canvas.toDataURL("image/png"));
+  }, []);
   return (
     <section className="liquid-glass-layer">
-      <div className="liquid-glass-card">
+      <div ref={glassRef} className="liquid-glass-card">
         <div className="glass-card-glow glass-card-glow-one" />
         <div className="glass-card-glow glass-card-glow-two" />
 

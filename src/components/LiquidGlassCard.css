@@ -38,8 +38,8 @@
    */
   background: linear-gradient(
     135deg,
-    rgba(255, 250, 242, 0.105),
-    rgba(255, 248, 238, 0.035)
+    rgba(255, 250, 242, 0.16),
+    rgba(255, 248, 238, 0.075)
   );
 
   /*
@@ -62,11 +62,9 @@
 
   -webkit-backdrop-filter: blur(9px) saturate(165%) contrast(108%);
 
-  backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
-    blur(9px) saturate(165%) contrast(108%);
+  backdrop-filter: blur(18px) saturate(180%) contrast(112%);
 
-  -webkit-backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
-    blur(9px) saturate(165%) contrast(108%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%) contrast(112%);
 
   pointer-events: auto;
 
@@ -87,13 +85,12 @@
 
   background: linear-gradient(
     125deg,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(255, 255, 255, 0.055) 18%,
-    transparent 42%,
-    transparent 70%,
-    rgba(255, 244, 230, 0.075) 100%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.075) 18%,
+    rgba(255, 255, 255, 0.025) 42%,
+    rgba(255, 255, 255, 0.018) 70%,
+    rgba(255, 244, 230, 0.095) 100%
   );
-
   box-shadow: inset 0 0 80px rgba(255, 248, 238, 0.035);
 
   z-index: 1;
@@ -109,14 +106,14 @@
 
   pointer-events: none;
 
-  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.025);
+  box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.055);
 
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.045),
-    transparent 18%,
-    transparent 82%,
-    rgba(255, 240, 220, 0.025)
+    rgba(255, 255, 255, 0.065),
+    rgba(255, 255, 255, 0.012) 18%,
+    rgba(255, 255, 255, 0.008) 82%,
+    rgba(255, 240, 220, 0.04)
   );
 
   z-index: 5;
@@ -644,11 +641,9 @@
 
     -webkit-backdrop-filter: blur(7px) saturate(160%) contrast(106%);
 
-    backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
-      blur(7px) saturate(160%) contrast(106%);
+    backdrop-filter: blur(16px) saturate(175%) contrast(110%);
 
-    -webkit-backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
-      blur(7px) saturate(160%) contrast(106%);
+    -webkit-backdrop-filter: blur(16px) saturate(175%) contrast(110%);
   }
 
   .glass-card-inner {

@@ -255,7 +255,7 @@
   top: 26px;
   right: -200px;
 
-  width: clamp(90px, 12vw, 250px);
+  width: clamp(220px, 12vw, 250px);
 
   pointer-events: none;
 

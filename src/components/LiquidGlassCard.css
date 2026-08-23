@@ -38,8 +38,8 @@
    */
   background: linear-gradient(
     135deg,
-    rgba(255, 250, 242, 0.16),
-    rgba(255, 248, 238, 0.075)
+    rgba(255, 250, 242, 0.085),
+    rgba(255, 248, 238, 0.028)
   );
 
   /*
@@ -58,13 +58,9 @@
    * blur = optical softness
    * saturate = rich liquid-glass color
    */
-  backdrop-filter: blur(9px) saturate(165%) contrast(108%);
+  backdrop-filter: blur(6px) saturate(160%) contrast(106%);
 
-  -webkit-backdrop-filter: blur(9px) saturate(165%) contrast(108%);
-
-  backdrop-filter: blur(18px) saturate(180%) contrast(112%);
-
-  -webkit-backdrop-filter: blur(18px) saturate(180%) contrast(112%);
+  -webkit-backdrop-filter: blur(6px) saturate(160%) contrast(106%);
 
   pointer-events: auto;
 
@@ -85,15 +81,23 @@
 
   background: linear-gradient(
     125deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.075) 18%,
-    rgba(255, 255, 255, 0.025) 42%,
-    rgba(255, 255, 255, 0.018) 70%,
-    rgba(255, 244, 230, 0.095) 100%
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.035) 20%,
+    transparent 42%,
+    transparent 72%,
+    rgba(255, 244, 230, 0.055) 100%
   );
-  box-shadow: inset 0 0 80px rgba(255, 248, 238, 0.035);
+  box-shadow: inset 0 0 80px rgba(255, 248, 238, 0.025);
 
   z-index: 1;
+}
+
+.liquid-glass-card::marker {
+  display: none;
+}
+
+.liquid-glass-card {
+  --liquid-refraction: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .liquid-glass-card::after {
@@ -106,14 +110,14 @@
 
   pointer-events: none;
 
-  box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.035);
 
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.065),
-    rgba(255, 255, 255, 0.012) 18%,
-    rgba(255, 255, 255, 0.008) 82%,
-    rgba(255, 240, 220, 0.04)
+    rgba(255, 255, 255, 0.04),
+    transparent 20%,
+    transparent 80%,
+    rgba(255, 240, 220, 0.025)
   );
 
   z-index: 5;
@@ -637,13 +641,9 @@
 
     border-radius: 25px;
 
-    backdrop-filter: blur(7px) saturate(160%) contrast(106%);
+    backdrop-filter: blur(5px) saturate(155%) contrast(105%);
 
-    -webkit-backdrop-filter: blur(7px) saturate(160%) contrast(106%);
-
-    backdrop-filter: blur(16px) saturate(175%) contrast(110%);
-
-    -webkit-backdrop-filter: blur(16px) saturate(175%) contrast(110%);
+    -webkit-backdrop-filter: blur(5px) saturate(155%) contrast(105%);
   }
 
   .glass-card-inner {

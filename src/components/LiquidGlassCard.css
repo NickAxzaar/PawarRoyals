@@ -58,11 +58,9 @@
    * blur = optical softness
    * saturate = rich liquid-glass color
    */
-  backdrop-filter: url("#pawar-liquid-refraction") blur(15px) saturate(165%)
-    contrast(108%);
+  backdrop-filter: blur(15px) saturate(165%) contrast(108%);
 
-  -webkit-backdrop-filter: url("#pawar-liquid-refraction") blur(15px)
-    saturate(165%) contrast(108%);
+  -webkit-backdrop-filter: blur(15px) saturate(165%) contrast(108%);
 
   pointer-events: auto;
 

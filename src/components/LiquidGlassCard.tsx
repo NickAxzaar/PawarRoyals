@@ -100,7 +100,7 @@ export default function LiquidGlassCard() {
             <feDisplacementMap
               in="SourceGraphic"
               in2="displacementMap"
-              scale="16"
+              scale="80"
               xChannelSelector="R"
               yChannelSelector="G"
             />

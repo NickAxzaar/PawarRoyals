@@ -38,8 +38,8 @@
    */
   background: linear-gradient(
     135deg,
-    rgba(255, 250, 242, 0.085),
-    rgba(255, 248, 238, 0.028)
+    rgba(255, 250, 242, 0.115),
+    rgba(255, 248, 238, 0.035)
   );
 
   /*
@@ -58,11 +58,11 @@
    * blur = optical softness
    * saturate = rich liquid-glass color
    */
-  backdrop-filter: url("#pawar-liquid-refraction") blur(3px) saturate(170%)
-    contrast(106%);
+  backdrop-filter: url("#pawar-liquid-refraction") blur(4px) saturate(165%)
+    contrast(108%);
 
-  -webkit-backdrop-filter: url("#pawar-liquid-refraction") blur(3px)
-    saturate(170%) contrast(106%);
+  -webkit-backdrop-filter: url("#pawar-liquid-refraction") blur(4px)
+    saturate(165%) contrast(108%);
 
   pointer-events: auto;
 
@@ -643,9 +643,11 @@
 
     border-radius: 25px;
 
-    backdrop-filter: blur(5px) saturate(155%) contrast(105%);
+    backdrop-filter: url("#pawar-liquid-refraction") blur(4px) saturate(165%)
+      contrast(108%);
 
-    -webkit-backdrop-filter: blur(5px) saturate(155%) contrast(105%);
+    -webkit-backdrop-filter: url("#pawar-liquid-refraction") blur(4px)
+      saturate(165%) contrast(108%);
   }
 
   .glass-card-inner {

@@ -1,5 +1,6 @@
 ﻿import { useEffect, useRef } from "react";
 import "./LiquidGlassCard.css";
+const LIQUID_FILTER_ID = "pawar-liquid-refraction";
 
 type Project = {
   number: string;
@@ -74,102 +75,138 @@ export default function LiquidGlassCard() {
     map.setAttribute("href", canvas.toDataURL("image/png"));
   }, []);
   return (
-    <section className="liquid-glass-layer">
-      <div ref={glassRef} className="liquid-glass-card">
-        <div className="glass-card-glow glass-card-glow-one" />
-        <div className="glass-card-glow glass-card-glow-two" />
+    <>
+      <svg
+        className="liquid-glass-filters"
+        width="0"
+        height="0"
+        aria-hidden="true"
+      >
+        <defs>
+          <filter
+            id={LIQUID_FILTER_ID}
+            x="-10%"
+            y="-10%"
+            width="120%"
+            height="120%"
+            colorInterpolationFilters="sRGB"
+          >
+            <feImage
+              ref={displacementRef}
+              preserveAspectRatio="none"
+              result="displacementMap"
+            />
 
-        <div className="glass-card-inner">
-          <a
-            className="portfolio-link"
-            href="https://www.instagram.com/ig_anuj_pwr?igsi=MTlpMHdreWdmeXRhNQ=="
-            aria-label="Visit Pawar Royals Instagram"
-          ></a>
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="displacementMap"
+              scale="16"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+        </defs>
+      </svg>
 
-          <header className="portfolio-header">
-            <div className="portfolio-eyebrow">
-              <span className="eyebrow-dot" />
-              PORTFOLIO
-            </div>
+      <section className="liquid-glass-layer">
+        <div ref={glassRef} className="liquid-glass-card">
+          <div className="glass-card-glow glass-card-glow-one" />
+          <div className="glass-card-glow glass-card-glow-two" />
 
-            <h1>
-              Pawar
-              <span>Royals</span>
-            </h1>
-
-            <p className="portfolio-intro">Pawar Brotherhood Empires</p>
-
-            <div className="portfolio-logo" aria-hidden="true">
-              <img
-                src="/anujpawar.png"
-                alt=""
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
-            </div>
-          </header>
-
-          <div className="portfolio-divider" />
-
-          <div className="projects-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.number}>
-                <a
-                  className="project-card-link"
-                  href={
-                    project.number === "01"
-                      ? "https://www.instagram.com/the_royalevents01?igsi=eXUzbWRncmJrOGF3"
-                      : "https://www.instagram.com/royal_bakery_.04?igsi=NGxmeGpsOGF2M2gy"
-                  }
-                  aria-label={`Visit ${project.title}`}
-                ></a>
-
-                <div className="project-top">
-                  <span className="project-number">{project.number}</span>
-
-                  <span className="project-category">{project.category}</span>
-                </div>
-
-                <div className="project-content">
-                  <h2>{project.title}</h2>
-
-                  <p>{project.description}</p>
-                </div>
-
-                <button type="button" className="project-button">
-                  <span>CLICK EXPLORE MORE...</span>
-                </button>
-
-                <div className="project-logo" aria-hidden="true">
-                  <img
-                    src={
-                      project.number === "01" ? "/pawartre.png" : "/pawarrb.png"
-                    }
-                    alt=""
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <footer className="portfolio-footer">
-            <span>Ahirwars Studios</span>
-
+          <div className="glass-card-inner">
             <a
-              className="portfolio-button"
-              href="https://www.instagram.com/anujvlogchapter?igsi=MWJ1b3A0MjIxNzgzcQ=="
-              aria-label="View Full Portfolio"
-            >
-              VIEW FULL PORTFOLIO
-              <span>→</span>
-            </a>
-          </footer>
+              className="portfolio-link"
+              href="https://www.instagram.com/ig_anuj_pwr?igsi=MTlpMHdreWdmeXRhNQ=="
+              aria-label="Visit Pawar Royals Instagram"
+            ></a>
+
+            <header className="portfolio-header">
+              <div className="portfolio-eyebrow">
+                <span className="eyebrow-dot" />
+                PORTFOLIO
+              </div>
+
+              <h1>
+                Pawar
+                <span>Royals</span>
+              </h1>
+
+              <p className="portfolio-intro">Pawar Brotherhood Empires</p>
+
+              <div className="portfolio-logo" aria-hidden="true">
+                <img
+                  src="/anujpawar.png"
+                  alt=""
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </div>
+            </header>
+
+            <div className="portfolio-divider" />
+
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <article className="project-card" key={project.number}>
+                  <a
+                    className="project-card-link"
+                    href={
+                      project.number === "01"
+                        ? "https://www.instagram.com/the_royalevents01?igsi=eXUzbWRncmJrOGF3"
+                        : "https://www.instagram.com/royal_bakery_.04?igsi=NGxmeGpsOGF2M2gy"
+                    }
+                    aria-label={`Visit ${project.title}`}
+                  ></a>
+
+                  <div className="project-top">
+                    <span className="project-number">{project.number}</span>
+
+                    <span className="project-category">{project.category}</span>
+                  </div>
+
+                  <div className="project-content">
+                    <h2>{project.title}</h2>
+
+                    <p>{project.description}</p>
+                  </div>
+
+                  <button type="button" className="project-button">
+                    <span>CLICK EXPLORE MORE...</span>
+                  </button>
+
+                  <div className="project-logo" aria-hidden="true">
+                    <img
+                      src={
+                        project.number === "01"
+                          ? "/pawartre.png"
+                          : "/pawarrb.png"
+                      }
+                      alt=""
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <footer className="portfolio-footer">
+              <span>Ahirwars Studios</span>
+
+              <a
+                className="portfolio-button"
+                href="https://www.instagram.com/anujvlogchapter?igsi=MWJ1b3A0MjIxNzgzcQ=="
+                aria-label="View Full Portfolio"
+              >
+                VIEW FULL PORTFOLIO
+                <span>→</span>
+              </a>
+            </footer>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

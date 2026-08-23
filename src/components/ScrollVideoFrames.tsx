@@ -252,9 +252,15 @@ export default function ScrollVideoFrames() {
     const startInitialLoading = () => {
       loadFrame(0);
 
-      for (let i = 1; i <= 12; i++) {
-        loadFrame(i);
-      }
+      window.setTimeout(() => {
+        if (destroyed) {
+          return;
+        }
+
+        for (let i = 1; i <= 4; i++) {
+          loadFrame(i);
+        }
+      }, 350);
     };
 
     const calculateTargetFrame = () => {

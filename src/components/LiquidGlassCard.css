@@ -1,15 +1,4 @@
-﻿.liquid-glass-filters {
-  position: absolute;
-
-  width: 0;
-  height: 0;
-
-  overflow: hidden;
-
-  pointer-events: none;
-}
-
-.liquid-glass-layer {
+﻿.liquid-glass-layer {
   position: fixed;
   inset: 0;
 
@@ -69,11 +58,15 @@
    * blur = optical softness
    * saturate = rich liquid-glass color
    */
-  backdrop-filter: url("#liquid-glass-distortion") blur(9px) saturate(165%)
-    contrast(108%);
+  backdrop-filter: blur(9px) saturate(165%) contrast(108%);
 
-  -webkit-backdrop-filter: url("#liquid-glass-distortion") blur(8px)
-    saturate(165%) contrast(108%);
+  -webkit-backdrop-filter: blur(9px) saturate(165%) contrast(108%);
+
+  backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
+    blur(9px) saturate(165%) contrast(108%);
+
+  -webkit-backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
+    blur(9px) saturate(165%) contrast(108%);
 
   pointer-events: auto;
 
@@ -116,8 +109,7 @@
 
   pointer-events: none;
 
-  box-shadow:
-    inset 0 0 18px rgba(255, 255, 255, 0.025);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.025);
 
   background: linear-gradient(
     180deg,
@@ -648,11 +640,15 @@
 
     border-radius: 25px;
 
-    backdrop-filter: url("#liquid-glass-distortion") blur(7px) saturate(160%)
-      contrast(106%);
+    backdrop-filter: blur(7px) saturate(160%) contrast(106%);
 
-    -webkit-backdrop-filter: url("#liquid-glass-distortion") blur(7px)
-      saturate(160%) contrast(106%);
+    -webkit-backdrop-filter: blur(7px) saturate(160%) contrast(106%);
+
+    backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
+      blur(7px) saturate(160%) contrast(106%);
+
+    -webkit-backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-distortion")
+      blur(7px) saturate(160%) contrast(106%);
   }
 
   .glass-card-inner {

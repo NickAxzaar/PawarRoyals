@@ -184,7 +184,7 @@
 
 @media (min-width: 768px) {
   .portfolio-link {
-    height: 330px;
+    height: 270px;
   }
 }
 
@@ -226,10 +226,10 @@
 .portfolio-logo {
   position: absolute;
 
-  top: 26px;
-  right: -200px;
+  top: 15px;
+  right: -100px;
 
-  width: clamp(220px, 12vw, 250px);
+  width: clamp(190px, 12vw, 250px);
 
   pointer-events: none;
 
@@ -250,11 +250,11 @@
 .portfolio-eyebrow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.22em;
 
@@ -399,8 +399,8 @@
 .project-logo {
   position: absolute;
 
-  right: 20px;
-  bottom: 16px;
+  right: -12px;
+  bottom: -15px;
 
   width: clamp(90px, 13vw, 150px);
 
@@ -607,6 +607,10 @@
     padding: 16px;
 
     height: 100dvh;
+  }
+
+  .portfolio-link {
+    height: 160px;
   }
 
   .liquid-glass-card {

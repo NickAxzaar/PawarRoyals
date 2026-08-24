@@ -32,8 +32,8 @@
 
   background: linear-gradient(
     135deg,
-    rgba(255, 250, 242, 0.115),
-    rgba(255, 248, 238, 0.035)
+    rgba(255, 250, 242, 0.055),
+    rgba(255, 248, 238, 0.015)
   );
 
   box-shadow:
@@ -47,6 +47,25 @@
   -webkit-backdrop-filter: blur(45px) saturate(165%) contrast(108%);
 
   pointer-events: auto;
+}
+
+.liquid-glass-video {
+  position: absolute;
+  inset: -45px;
+
+  width: calc(100% + 90px);
+  height: calc(100% + 90px);
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: blur(45px);
+
+  opacity: 0.78;
+
+  pointer-events: none;
+
+  z-index: 0;
 }
 
 .liquid-glass-card::before {

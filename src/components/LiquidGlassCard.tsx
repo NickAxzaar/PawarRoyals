@@ -28,6 +28,17 @@ export default function LiquidGlassCard() {
   return (
     <section className="liquid-glass-layer">
       <div className="liquid-glass-card">
+        <video
+          className="liquid-glass-video"
+          src="/homepagebackground.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
+
         <div className="glass-card-glow glass-card-glow-one" />
         <div className="glass-card-glow glass-card-glow-two" />
 

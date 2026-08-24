@@ -67,14 +67,17 @@ select {
 .scroll-video-sticky {
   position: fixed;
   inset: 0;
+
   width: 100vw;
   height: 100dvh;
   min-height: 100vh;
+
   overflow: hidden;
+
   background: #000;
+
   z-index: 1;
-  contain: strict;
-  transform: translateZ(0);
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -82,13 +85,17 @@ select {
 .scroll-video-canvas {
   position: absolute;
   inset: 0;
+
   display: block;
+
   width: 100%;
   height: 100%;
+
   margin: 0;
   padding: 0;
+
   background: #000;
-  transform: translateZ(0);
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }

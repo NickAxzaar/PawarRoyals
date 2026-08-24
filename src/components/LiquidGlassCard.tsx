@@ -41,15 +41,13 @@ export default function LiquidGlassCard() {
           <header className="portfolio-header">
             <div className="portfolio-eyebrow">
               <span className="eyebrow-dot" />
-              PORTFOLIO
+              Pawar Brotherhood Empires
             </div>
 
             <h1>
               Pawar
               <span>Royals</span>
             </h1>
-
-            <p className="portfolio-intro">Pawar Brotherhood Empires</p>
 
             <div className="portfolio-logo" aria-hidden="true">
               <img
@@ -109,14 +107,12 @@ export default function LiquidGlassCard() {
           </div>
 
           <footer className="portfolio-footer">
-            <span>Ahirwars Studios</span>
-
             <a
               className="portfolio-button"
               href="https://www.instagram.com/anujvlogchapter?igsi=MWJ1b3A0MjIxNzgzcQ=="
               aria-label="View Full Portfolio"
             >
-              VIEW FULL PORTFOLIO
+              Instagram: @anujvlogchapter
               <span>→</span>
             </a>
           </footer>

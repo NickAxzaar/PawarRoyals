@@ -10,16 +10,6 @@ export default function BackgroundVideo() {
         playsInline
         preload="auto"
       />
-
-      <video
-        className="background-video background-video-glass"
-        src="/homepagebackground.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      />
     </div>
   );
 }
